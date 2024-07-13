@@ -5,12 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #show-password {
+            margin-left: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
         #user-info {
             display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #user-info h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #user-info p {
+            margin-bottom: 5px;
+            color: #666;
         }
     </style>
 </head>
 <body>
+<div class="container">
     <h1>로그인</h1>
     <form id="signin-form">
         <label for="email">이메일:</label>
@@ -25,13 +109,14 @@
 
     <div id="user-info">
         <h2>사용자 정보</h2>
-        <p id="user-id"></p>
-        <p id="user-username"></p>
-        <p id="user-email"></p>
-        <p id="user-birth"></p>
-        <p id="user-created_at"></p>
+        <p><strong>ID:</strong> <span id="user-id"></span></p>
+        <p><strong>이름:</strong> <span id="user-username"></span></p>
+        <p><strong>이메일:</strong> <span id="user-email"></span></p>
+        <p><strong>생년월일:</strong> <span id="user-birth"></span></p>
+        <p><strong>가입일:</strong> <span id="user-created_at"></span></p>
     </div>
+</div>
 
-    <script src="signin.js"></script>
+<script src="signin.js"></script>
 </body>
 </html>
